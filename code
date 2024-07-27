@@ -1,0 +1,43 @@
+There is an interesting walk around the clock.
+
+There is a path which represents a circle, and there are 12 points along its side representing 1,2,3...12 as it is observed on a clock.
+The distance between two consecutive points is measured as 5 clock-minutes (cmins). One Complete round of circle is 60 clock-minutes.
+
+Let us assume there are two friends A and B who are stationed at 12 Clock point. 
+They both must walk In the clock-wise direction, and then Continue to walk until they cross each other.
+They both must start walking with different speeds.
+They both must maintain their respective walking speed all along the journey.
+
+You have to find at what point along the clock-path will they meet each other after they start walking.
+
+'Write a program which:
+
+1. Time taken by A to cover 5 cmins = x mins
+1. Time taken by B to cover 5 cmins = y mins
+3. Outputs the clock-minutes (measured from 12 o-clock) at which they will cross each other along the path.
+
+Code:-
+
+//	Enter the answer in any programming language you desire
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        
+        System.out.println("Enter time taken by A to cover 5 cmins: ");
+        double x=sc.nextDouble();
+        System.out.println("Enter time taken by B to cover 5 cmins: ");
+        double y=sc.nextDouble();
+        
+        double speedA=5.0/x;
+        double speedB=5.0/y;
+        
+        double meetTime=60.0/(speedA-speedB);
+        
+        double meetPosition=(speedA * meetTime) % 60;
+        
+        System.out.println("A and B will cross each other at: "+ meetPosition);
+        
+    } 
+}
